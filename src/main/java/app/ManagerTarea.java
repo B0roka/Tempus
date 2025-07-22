@@ -1,3 +1,8 @@
+package app;
+
+import model.Tarea;
+import persistencia.ConexionSQLite;
+
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -7,7 +12,7 @@ public class ManagerTarea {
 
     private ArrayList<Tarea> tareas;
     //persistencia desde SQLite
-    ConexionSQLite conexion; //= new ConexionSQLite("jdbc:sqlite:tempus.db");
+    ConexionSQLite conexion; //= new persistencia.ConexionSQLite("jdbc:sqlite:tempus.db");
 
    //constructor
     public ManagerTarea(ConexionSQLite conexion) {
@@ -28,7 +33,7 @@ public class ManagerTarea {
             sentencia.setString(2, nueva.getPrioridad().name());
             sentencia.setString(3, nueva.getEstado().name());
             sentencia.executeUpdate();
-            System.out.println("Tarea persistida en BD: " + nueva);
+            System.out.println("model.Tarea persistida en BD: " + nueva);
         }catch (SQLException e) {
             System.out.println("Error al guardar la tarea en la BD: " + e.getMessage());
         }
@@ -56,7 +61,7 @@ public class ManagerTarea {
             if (tarea.getId() == id)
             {
                 tarea.setEstado(Tarea.Estado.COMPLETADA);
-                System.out.printf("Tarea %s completada con exito%n", tarea);
+                System.out.printf("model.Tarea %s completada con exito%n", tarea);
                 return true;
             }
         }
@@ -75,7 +80,7 @@ public class ManagerTarea {
                 return true;
             }
         }
-        System.out.printf("Tarea con ID %d no encontrada.", id);
+        System.out.printf("model.Tarea con ID %d no encontrada.", id);
         return false;
     }
 

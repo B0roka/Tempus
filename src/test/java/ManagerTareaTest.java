@@ -1,6 +1,9 @@
+import app.ManagerTarea;
+import model.Tarea;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import persistencia.ConexionSQLite;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

@@ -1,3 +1,5 @@
+package model;
+
 public class Tarea {
     //contador para los ID
     private static int contador = 0;

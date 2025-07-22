@@ -1,3 +1,8 @@
+package app;
+
+import model.Tarea;
+import persistencia.ConexionSQLite;
+
 import java.util.List;
 import java.util.Scanner;
 

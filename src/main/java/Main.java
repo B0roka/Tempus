@@ -3,7 +3,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        ManagerTarea gestor = new ManagerTarea();
+        ConexionSQLite conexion = new ConexionSQLite("jdbc:sqlite:tempus.db");
+        ManagerTarea gestor = new ManagerTarea(conexion);
         Scanner entrada = new Scanner(System.in);
         int opcion;
 
